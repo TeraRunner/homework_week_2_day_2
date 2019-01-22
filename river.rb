@@ -11,8 +11,12 @@ class River
     return @river_name
   end
 
+  def add_fish_to_collection(fish)
+    return @fish_collection << fish
+  end
+
   def lose_fish
-    @fish_collection.pop
+    return @fish_collection.pop
   end
 
 end

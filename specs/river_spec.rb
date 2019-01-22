@@ -8,8 +8,7 @@ require_relative("../bear")
 class RiverTest < MiniTest::Test
 
   def setup
-    bob = Fish.new("bob")
-    @river = River.new("Amazon", [bob])
+    @river = River.new("Amazon", [])
   end
 
   def test_get_river_name
@@ -17,8 +16,12 @@ class RiverTest < MiniTest::Test
   end
 
   def test_lose_fish
+    bob = Fish.new("bob")
+    tim = Fish.new("tim")
+    @river.add_fish_to_collection(bob)
+    @river.add_fish_to_collection(tim)
     @river.fish_collection.pop
-    assert_equal(0, @river.fish_collection.length)
+    assert_equal(1, @river.fish_collection.length)
   end
 
 end

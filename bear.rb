@@ -8,7 +8,9 @@ class Bear
     @food_collection = []
   end
 
-  
+  # def add_fish_food_collection
+  #
+  # end
 
 end
 
