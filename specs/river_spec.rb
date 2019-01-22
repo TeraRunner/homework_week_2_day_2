@@ -9,6 +9,10 @@ class RiverTest < MiniTest::Test
 
   def setup
     @river = River.new("Amazon", [])
+    bob = Fish.new("bob")
+    tim = Fish.new("tim")
+    @river.add_fish_to_collection(bob)
+    @river.add_fish_to_collection(tim)
   end
 
   def test_get_river_name
@@ -16,10 +20,6 @@ class RiverTest < MiniTest::Test
   end
 
   def test_lose_fish
-    bob = Fish.new("bob")
-    tim = Fish.new("tim")
-    @river.add_fish_to_collection(bob)
-    @river.add_fish_to_collection(tim)
     @river.fish_collection.pop
     assert_equal(1, @river.fish_collection.length)
   end
